@@ -2,7 +2,9 @@ name: Github Actions git-out-bug assignment
 on:
   push:
     branches: 
-        - master 
+        - master
+        - develop
+        - 'bugfix/**'
 jobs:
   build:
     name: Build simple project
