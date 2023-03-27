@@ -25,4 +25,46 @@ describe("Testing GitCommand.status()", function(){
 
         expect(output).to.equal('You have 0 change/s.\n');
     });
+
+
+})
+
+
+
+describe("Testing GitCommand.init()", function(){
+
+    it('Should return empty Git repository', function(){
+        let wd = new WorkingDirectory();
+        let git = new GitCommand(wd);
+        let output = git.init();
+
+        expect(output).to.equal('Initialized as empty Git repository.');
+    });
+
+    
+})
+
+
+describe("Testing GitCommand.push()", function(){
+
+    it('Should return message when empty push or nothing to push', function(){
+        let wd = new WorkingDirectory();
+        let git = new GitCommand(wd);
+        git.init();
+        let output = git.push();
+
+        expect(output).to.equal('Nothing to push. No committed file found.');
+    });
+})
+
+describe("Testing GitCommand.commit()", function(){
+
+    it('Should return nothing to commit message when passing no param in git.commit()', function(){
+        let wd = new WorkingDirectory();
+        let git = new GitCommand(wd);
+        git.init();
+        let output = git.commit();
+
+        expect(output).to.equal('Nothing to commit.');
+    });
 })
