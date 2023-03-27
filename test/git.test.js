@@ -25,4 +25,21 @@ describe("Testing GitCommand.status()", function(){
 
         expect(output).to.equal('You have 0 change/s.\n');
     });
+
+
+})
+
+
+
+describe("Testing GitCommand.init()", function(){
+
+    it('Should return empty Git repository', function(){
+        let wd = new WorkingDirectory();
+        let git = new GitCommand(wd);
+        let output = git.init();
+
+        expect(output).to.equal('Initialized as empty Git repository.');
+    });
+
+    
 })
