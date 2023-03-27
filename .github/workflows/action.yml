@@ -4,7 +4,7 @@ on:
     branches: 
         - master
         - develop
-        - bugfix/git_status
+        - 'bugfix/**'
 jobs:
   build:
     name: Build simple project
