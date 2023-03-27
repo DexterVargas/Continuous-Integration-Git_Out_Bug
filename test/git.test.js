@@ -57,5 +57,14 @@ describe("Testing GitCommand.push()", function(){
     });
 })
 
+describe("Testing GitCommand.commit()", function(){
 
+    it('Should return nothing to commit message when passing no param in git.commit()', function(){
+        let wd = new WorkingDirectory();
+        let git = new GitCommand(wd);
+        git.init();
+        let output = git.commit();
 
+        expect(output).to.equal('Nothing to commit.');
+    });
+})
